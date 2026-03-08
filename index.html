@@ -1,29 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Music Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<!-- HEADER SECTION -->
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+
 <header>
-    <h1>Music Explorer</h1>
-    <p>Search any song or artist</p>
+  <div class="logo">
+    <span class="logo-icon">♫</span>
+    <span class="logo-text">Music<em>Explorer</em></span>
+  </div>
+  <p class="tagline">Search any song. Play any vibe.</p>
+
+  <div class="search-section">
+    <input type="text" id="search-input" placeholder="Artist, song, album..."/>
+    <button id="search-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      Search
+    </button>
+  </div>
 </header>
 
-<!-- SEARCH SECTION -->
-<section class="search-section">
-    <input type="text" id="search-input" placeholder="Search for songs, artists, or genres..."/>
-    <button id="search-btn">Search</button>
-</section>
+<main>
+  <p id="status-msg" class="status-msg">Start searching for your favorite music 🎵</p>
+  <div id="results-grid" class="results-grid"></div>
+</main>
 
-<!-- NOW PLAYING BAR (fixed at bottom) -->
+<div id="now-playing" class="now-playing hidden">
+  <img id="np-cover" src="" alt="cover" class="np-cover"/>
+  <div class="np-info">
+    <p id="np-song" class="np-song">—</p>
+    <p id="np-artist" class="np-artist">—</p>
+  </div>
+  <audio id="audio-player" controls></audio>
+  <button id="close-np">✕</button>
+</div>
 
 <script src="app.js"></script>
-
 </body>
+</html>
